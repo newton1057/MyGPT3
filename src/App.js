@@ -1,25 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
 import Ejemplo from "./components/Ejemplo"
+import Texto from "./components/Texto"
 
 function App() {
   return (
     <div className="App">
-      <Ejemplo />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='Contenedor-Principal'>
+        <h1>MyGPT-3</h1>
+
+        <Texto
+         Titulo='Introduce un texto'
+         TituloBoton='Play'/>
+         
+         <Texto
+         Titulo='Respuesta obtenida'
+         TituloBoton='Play'/>
+        <Ejemplo 
+          nombre='Eduardo Isaac Davila Bernal'
+          ocupacion='Estudiante de UAM'
+          texto='Mi nombre es Eduardo Isaac Davila Bernal'/>
+
+        <Ejemplo 
+          nombre='Jonathan Alexis'
+          ocupacion='Estudiante de Apple'
+          texto='Mi nombre es Jonathan Alexis'/>
+
+        <Ejemplo 
+          nombre='Angeles Hernandez'
+          ocupacion='Calidad en Apple'
+          texto='Mi nombre es Angeles Hernandez'/>
+         
+         
+         
+      </div>
     </div>
   );
 }
