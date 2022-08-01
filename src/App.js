@@ -15,6 +15,8 @@ function App() {
          <Texto
          Titulo='Respuesta obtenida'
          TituloBoton='Play'/>
+
+         
         <Ejemplo 
           nombre='Eduardo Isaac Davila Bernal'
           ocupacion='Estudiante de UAM'

@@ -9,6 +9,8 @@ function Texto(props){
         window.speechSynthesis.speak(msg);
         e.preventDefault();
         console.log('You clicked submit.');
+
+        
       }
 
   return(
