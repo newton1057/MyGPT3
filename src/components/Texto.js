@@ -17,9 +17,7 @@ function Texto(props){
     <div className="contenedor-Texto">
       
       <div className="texto-contenedor-Ejemplo">
-        <p className="Titulo">{props.nombre}</p>
-        <p className="Subtitulo">{props.ocupacion}</p>
-        <p className="General">{props.texto}</p>
+        
       </div>
 
         <form onSubmit={EnviarVoz}>
