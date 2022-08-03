@@ -20,7 +20,7 @@ function Texto(props){
         
       </div>
 
-        <form onSubmit={EnviarVoz}>
+        <form onSubmit={EnviarVoz} className="Formulario">
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">{props.Titulo}</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>

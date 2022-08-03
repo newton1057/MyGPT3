@@ -4,7 +4,7 @@ import '../css/NavBar.css';
 function NavBar(props){
   return(
     <div id="NavBar">
-        <nav class="navbar navbar-expand-lg bg-light" >
+        <nav class="navbar navbar-expand-lg bg-light fixed-top" >
   <div class="container-fluid">
     <a class="navbar-brand" href="/#">MyGPT3</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,10 +16,10 @@ function NavBar(props){
           <a class="nav-link active" aria-current="page" href="/#">ChatBot</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/#">Traductor</a>
+          <a class="nav-link active" aria-current="page" href="/Traductor">Traductor</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/#">Generador de Texto</a>
+          <a class="nav-link active" aria-current="page" href="/Generador">Generador de Texto</a>
         </li>
         
       </ul>
