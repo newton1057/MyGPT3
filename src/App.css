@@ -39,3 +39,13 @@ h1{
   align-items: center;
   justify-content: center;
 }
+
+.TA{
+  width: 90%;
+  margin-top: -240px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,6 +1,7 @@
 import './App.css';
 import Texto from "./components/Texto";
 import NavBar from "./components/NavBar";
+import Footer from './components/Footer';
 
 import { BrowserRouter, Route, Routes  } from 'react-router-dom';
 
@@ -25,6 +26,7 @@ function App() {
                 Titulo='Respuesta obtenida:'
                 TituloBoton='Play'/>      
         </div>
+        
       </div>
         
       }/>
@@ -71,7 +73,15 @@ function App() {
         </div>
       </div>        
       }/>
-
+      <Route path='/Acercade' element={
+        <div className="App">
+        <NavBar/>
+        <div className='TA'>
+            <h1>Acerca de</h1>
+            <Footer/>
+        </div>
+      </div>        
+      }/>
       </Routes>
       
     

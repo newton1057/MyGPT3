@@ -21,6 +21,9 @@ function NavBar(props){
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/Generador">Generador de Texto</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/Acercade">Acerca de</a>
+        </li>
         
       </ul>
     </div>
