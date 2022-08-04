@@ -7,7 +7,6 @@ import { useState } from "react";
 function Texto(props){
   const [loading, setLoading] = useState(false);
   let [obj, setObj] = useState({ choices: [] });
-  var cond = 1;
   var payload = {
     prompt: ".",
     max_tokens: 128,
@@ -62,17 +61,7 @@ function Texto(props){
     }
   };
 
-  function ejecutar(){
-    alert("Entra")
-    if(cond%2==0){
-      console("2da vez")
-      getRes();
-    }
-    else{
-      console("1ra vez")
-      getRes();
-    }
-  }
+  
 
   function EnviarVoz(respuesta_ai) {
 
