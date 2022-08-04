@@ -1,78 +1,37 @@
 import './App.css';
-import Texto from "./components/Texto";
 import NavBar from "./components/NavBar";
 import Footer from './components/Footer';
-
+import ChatBoot from './pages/ChatBoot';
+import Traductor from './pages/Traductor';
+import Generador from './pages/Generador';
 import { BrowserRouter, Route, Routes  } from 'react-router-dom';
 
 function App() {
   return (
     
-    
-    <BrowserRouter>
+    <div className="App">
+      <BrowserRouter>
       <Routes>
 
       <Route path='/' element={
-        <div className="App">
-        <NavBar/>
-        <div className='Contenedor-Principal'>
-            <h1>ChatBot</h1>
-  
-              <Texto
-                Titulo='Introduce un texto:'
-                TituloBoton='Play'/>
-   
-              <Texto
-                Titulo='Respuesta obtenida:'
-                TituloBoton='Play'/>      
+        <div id='Marco'>
+          <ChatBoot/>
         </div>
-        
-      </div>
-        
       }/>
 
 <Route path='/Traductor' element={
-        <div className="App">
-        <NavBar/>
-        <div className='Contenedor-Principal'>
-            
-            <h1>Traductor</h1>
-  
-              <Texto
-                Titulo='Introduce un texto:'
-                TituloBoton='Play'/>
-  
-              <Texto
-                Titulo='Respuesta obtenida:'
-                TituloBoton='Play'/>
-  
-            
-            
-            
-          
-          
-          
-      
+        <div id='Marco'>
+          <Traductor/>
         </div>
-      </div>
         
       }/>
 
 <Route path='/Generador' element={
-        <div className="App">
-        <NavBar/>
-        <div className='Contenedor-Principal'>
-            <h1>Generador de Textos</h1>
-              <Texto
-                Titulo='Introduce un texto:'
-                TituloBoton='Play'/>
-   
-              <Texto
-                Titulo='Respuesta obtenida:'
-                TituloBoton='Play'/>
+        <div id='Marco'>
+          <Generador/>
         </div>
-      </div>        
       }/>
+      
       <Route path='/Acercade' element={
         <div className="App">
         <NavBar/>
@@ -87,6 +46,8 @@ function App() {
     
     
     </BrowserRouter>
+    </div>
+    
   );
 }
 
