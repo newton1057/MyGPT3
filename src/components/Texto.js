@@ -31,7 +31,7 @@ function Texto(props){
       headers: {
         "Content-Type": "application/json",
         Authorization:
-          "Bearer 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"
+          "Bearer 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"
       }
     })
       .then((res) => {
