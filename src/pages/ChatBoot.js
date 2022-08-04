@@ -11,8 +11,7 @@ function ChatBoot(){
             <h1>ChatBot</h1>
   
               <Texto
-                Titulo='Introduce un texto:'
-                TituloBoton='Play'/>
+                Titulo='Introduce un texto:'/>
    
               <Texto
                 Titulo='Respuesta obtenida:'

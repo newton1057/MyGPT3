@@ -7,9 +7,10 @@ import { useState } from "react";
 function Texto(props){
   const [loading, setLoading] = useState(false);
   let [obj, setObj] = useState({ choices: [] });
-  const payload = {
-    prompt: "Hola",
-    max_tokens: 64,
+  var cond = 1;
+  var payload = {
+    prompt: ".",
+    max_tokens: 128,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
@@ -18,15 +19,11 @@ function Texto(props){
     model: "text-davinci-001"
   };
 
+  
   const getRes = () => {
-    var text = document.getElementById("exampleFormControlTextarea1").value;
-    alert(text)
-    payload.prompt=text;
-    alert (payload.prompt)
-
-    console.log(payload.prompt)
-    console.log(payload.model)
     setLoading(true)
+    var text = document.getElementById("exampleFormControlTextarea1").value;
+    payload.prompt=text;
     
     axios({
       method: "POST",
@@ -35,10 +32,11 @@ function Texto(props){
       headers: {
         "Content-Type": "application/json",
         Authorization:
-          "Bearer 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"
+          "Bearer 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"
       }
     })
       .then((res) => {
+        console.log("Envia respuesta");
         console.log(res);
         responseHandler(res);
       })
@@ -46,22 +44,42 @@ function Texto(props){
         setLoading(false);
         console.log(e.message, e);
       });
-      console.log("Exito")
-      alert(obj.choices[1])
+      
   };
 
   const responseHandler = (res) => {
     if (res.status === 200) {
+      var text_res = res.data.choices[0].text;
       setObj(res.data);
+      
+      console.log(obj)
+            
+      document.getElementById("respuesta_obtenida").innerHTML = text_res;
+      EnviarVoz(text_res)
       setLoading(false);
+      console.log("Exito")
+
     }
   };
 
-  function EnviarVoz(e) {
-        var texto = document.getElementById('exampleFormControlTextarea1').value;
+  function ejecutar(){
+    alert("Entra")
+    if(cond%2==0){
+      console("2da vez")
+      getRes();
+    }
+    else{
+      console("1ra vez")
+      getRes();
+    }
+  }
+
+  function EnviarVoz(respuesta_ai) {
+
+        var texto = respuesta_ai;
+        console.log(texto)
         var msg = new SpeechSynthesisUtterance(texto);
         window.speechSynthesis.speak(msg);
-        e.preventDefault();
         console.log('You clicked submit.');
   };
 
@@ -72,7 +90,7 @@ function Texto(props){
         
       </div>
 
-        <form onSubmit={EnviarVoz} className="Formulario">
+        <form className="Formulario">
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">{props.Titulo}</label>
                 <textarea 
@@ -85,6 +103,12 @@ function Texto(props){
                 </textarea>
             </div>
             <button class="btn btn-lg btn-secondary fw-bold border-white bg-dark" type="submit" disabled={loading} onClick={getRes}>{loading ? "Espere.. " : "Enviar"}</button>
+
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Respuesta Obtenida</label>
+                <textarea disabled class="form-control" id="respuesta_obtenida">  
+                </textarea>
+            </div>
         </form>
 
         
