@@ -3,7 +3,7 @@ import '../css/Texto.css';
 import axios from "axios";
 import { useState } from "react";
 
-function Texto(props){
+function TextoChat(props){
 
   function EnviarVoz(res_voz) {
     const texto = res_voz;
@@ -27,11 +27,11 @@ function Texto(props){
   
   var payload = {
     prompt: ".",
-    max_tokens: 128,
+    max_tokens: 150,
     top_p: 1,
     frequency_penalty: 0,
-    presence_penalty: 0,
-    temperature: 0.4,
+    presence_penalty: 0.6,
+    temperature: 0.9,
     n: 1,
     model: "text-davinci-001"
   };
@@ -114,4 +114,4 @@ function Texto(props){
   );
 }
 
-export default Texto;
+export default TextoChat;
