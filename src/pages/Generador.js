@@ -26,9 +26,7 @@ function Generador(){
                 Titulo='Introduce un texto:'
                 />
    
-              <Texto
-                Titulo='Respuesta obtenida:'
-                TituloBoton='Play'/>      
+              
         </div>
         </div>
         

@@ -5,6 +5,14 @@ import { useState } from "react";
 
 
 function Texto(props){
+
+  function EnviarVoz() {
+    const texto = document.getElementById("respuesta_obtenida").value.trim();
+    console.log(texto)
+    var msg = new SpeechSynthesisUtterance(texto);
+    window.speechSynthesis.speak(msg);
+};
+
   const [loading, setLoading] = useState(false);
   let [obj, setObj] = useState({ choices: [] });
   var payload = {
@@ -31,7 +39,7 @@ function Texto(props){
       headers: {
         "Content-Type": "application/json",
         Authorization:
-          "Bearer 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"
+          "Bearer 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"
       }
     })
       .then((res) => {
@@ -49,12 +57,11 @@ function Texto(props){
   const responseHandler = (res) => {
     if (res.status === 200) {
       var text_res = res.data.choices[0].text;
-      setObj(res.data);
+      
       
       console.log(obj)
-            
       document.getElementById("respuesta_obtenida").innerHTML = text_res;
-      EnviarVoz(text_res)
+      EnviarVoz();
       setLoading(false);
       console.log("Exito")
 
@@ -62,15 +69,6 @@ function Texto(props){
   };
 
   
-
-  function EnviarVoz(respuesta_ai) {
-
-        var texto = respuesta_ai;
-        console.log(texto)
-        var msg = new SpeechSynthesisUtterance(texto);
-        window.speechSynthesis.speak(msg);
-        console.log('You clicked submit.');
-  };
 
   return(
     <div className="contenedor-Texto">

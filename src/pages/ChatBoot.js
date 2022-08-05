@@ -13,9 +13,7 @@ function ChatBoot(){
               <Texto
                 Titulo='Introduce un texto:'/>
    
-              <Texto
-                Titulo='Respuesta obtenida:'
-                TituloBoton='Play'/>      
+              
         </div>
         </div>
         
