@@ -7,10 +7,10 @@ import { useState } from "react";
 function Texto(props){
 
   function EnviarVoz() {
-    const texto = document.getElementById("respuesta_obtenida").value.trim();
+    const texto = document.getElementById("exampleFormControlTextarea1").value.trim();
     console.log(texto)
     var msg = new SpeechSynthesisUtterance(texto);
-    window.speechSynthesis.speak(msg);
+    speechSynthesis.speak(msg);
 };
 
   const [loading, setLoading] = useState(false);
@@ -89,7 +89,7 @@ function Texto(props){
                   >  
                 </textarea>
             </div>
-            <button class="btn btn-lg btn-secondary fw-bold border-white bg-dark" type="submit" disabled={loading} onClick={getRes}>{loading ? "Espere.. " : "Enviar"}</button>
+            <button class="btn btn-lg btn-secondary fw-bold border-white bg-dark" type="submit" disabled={loading} onClick={EnviarVoz}>{loading ? "Espere.. " : "Enviar"}</button>
 
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Respuesta Obtenida</label>
