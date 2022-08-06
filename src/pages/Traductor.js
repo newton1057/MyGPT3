@@ -13,10 +13,7 @@ function Traductor(){
               <Texto
                 Titulo='Introduce un texto:'
                 TituloBoton='Play'/>
-   
-              <Texto
-                Titulo='Respuesta obtenida:'
-                TituloBoton='Play'/>      
+     
         </div>
         </div>
         

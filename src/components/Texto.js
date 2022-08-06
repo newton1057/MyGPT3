@@ -49,7 +49,7 @@ function Texto(props){
       headers: {
         "Content-Type": "application/json",
         Authorization:
-          "Bearer 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"
+        process.env.REACT_APP_API_KEY
       }
     })
       .then((res) => {
