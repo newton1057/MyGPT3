@@ -43,7 +43,7 @@ function TextoChat(props){
     setLoading(true)
     var text = document.getElementById("exampleFormControlTextarea1").value;
     payload.prompt=text;
-
+    console.log(process.env.REACT_APP_API_KEY)
     
     axios({
       method: "POST",
@@ -52,7 +52,7 @@ function TextoChat(props){
       headers: {
         "Content-Type": "application/json",
         Authorization:
-          process.env.REACT_APP_API_KEY
+        "Bearer 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"
       }
     })
       .then((res) => {

@@ -1,0 +1,4 @@
+https://cloud.google.com/translate/automl/docs/evaluate
+https://arxiv.org/pdf/2005.14165.pdf
+https://github.com/mistersoftware/GPT3-en-espannol/blob/master/plain-text-without-revision.md
+https://www.frro.utn.edu.ar/repositorio/catedras/quimica/5_anio/orientadora1/monograias/matich-redesneuronales.pdf
